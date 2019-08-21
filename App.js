@@ -198,6 +198,8 @@ import TextStudy from './zComponent/textStudy/textStudy';
 import TextInput1 from './zComponent/TextInput/TextInput';
 import Touchables from './zComponent/touchable/touchables';
 import ViewPagerAndroids from './zComponent/ViewPagerAndroids/viewPagerAndroids';
+import ViewPagerAndroidExample from './zComponent/ViewPagerAndroids/example/ViewPagerAndroidExample.android';
+import WebViews from './zComponent/WebViews/webViews';
 
 const AppNavigator = createStackNavigator(
     {
@@ -206,6 +208,8 @@ const AppNavigator = createStackNavigator(
         TextInput:{screen:TextInput1},
         Touchables:{screen:Touchables},
         ViewPageerAdroids:{screen:ViewPagerAndroids},
+        Example:{screen:ViewPagerAndroidExample},
+        WebViews:{screen:WebViews},
     },
     {
         initialRouteName: 'Home',

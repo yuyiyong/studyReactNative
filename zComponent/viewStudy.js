@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {PixelRatio, StyleSheet, Text, View, Button, DrawerLayoutAndroid} from 'react-native';
 import navigation from 'react-navigation';
+import {require} from '../MyUtils/request';
 
 const ViewStudy = (props) => {
-    const [author, setAuthor] = useState('dongfangyao');
+    const [data, setData] = useState('无数据');
     const handle = () => {
         const {navigate} = props.navigation;
         navigate('TextStudy');
@@ -19,6 +20,15 @@ const ViewStudy = (props) => {
     const viewPageerAdroidsHandle = () => {
         const {navigate} = props.navigation;
         navigate('ViewPageerAdroids');
+    };
+
+    const example = () => {
+        const {navigate} = props.navigation;
+        navigate('Example');
+    };
+    const webViewHandle = () => {
+        const {navigate} = props.navigation;
+        navigate('WebViews')
     }
     let navigationView = (
         <View style={styles.DLA_globalLay}>
@@ -27,8 +37,22 @@ const ViewStudy = (props) => {
                 style={styles.DLA_nav}
                 onPress={viewPageerAdroidsHandle}
             >ViewPageerAdroids组件</Text>
+            <Text
+                style={styles.DLA_nav}
+                onPress={example}
+            >
+                ViewPageAdroids例子
+            </Text>
         </View>
     );
+    const connects = () => {
+        require('https://www.easy-mock.com/mock/5d5ce7c4bcf7a833e3876a55/MyTest/test').then(
+            (res) => {
+                console.log(res.data.message);
+                setData(res.data.message);
+            },
+        );
+    };
     return (
         <DrawerLayoutAndroid
             drawerWidth={200}
@@ -60,20 +84,30 @@ const ViewStudy = (props) => {
                 </View>
                 <View style={styles.item}>
                     <View style={[styles.center, styles.flex, styles.lineCenter]}>
-                        <Text style={styles.font}>团购</Text>
+                        <Text onPress={() => webViewHandle()} style={styles.font}>webView</Text>
                     </View>
                     <View style={[styles.center, styles.flex]}>
                         <Text style={styles.font}>客栈, 公寓</Text>
                     </View>
                 </View>
+
+            </View>
+            <View style={styles.globWrap}>
+                <Button
+                    title="链接"
+                    style={styles.btn}
+                    onPress={() => connects()}
+                />
+                <Text style={styles.testData}>{data}</Text>
             </View>
         </DrawerLayoutAndroid>
     );
+
 };
 const styles = StyleSheet.create({
     globWrap: {
-        // flex: 1,
-        // alignItems: 'center',
+        flex: 1,
+        alignItems: 'center',
         justifyContent: 'center',
     },
     contain: {
@@ -126,13 +160,25 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         color: '#fff',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
-    DLA_nav:{
+    DLA_nav: {
         margin: 10,
         fontSize: 14,
         textAlign: 'left',
         color: '#fff',
-    }
+    },
+    testData: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: 'black',
+    },
+    btn: {
+        // flex:1,
+        // height:50,
+        width: 300,
+        fontWeight: 'bold',
+        color: 'black',
+    },
 });
 export default ViewStudy;
