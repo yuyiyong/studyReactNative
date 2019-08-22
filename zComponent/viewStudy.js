@@ -22,6 +22,11 @@ const ViewStudy = (props) => {
         navigate('ViewPageerAdroids');
     };
 
+    const home  = () => {
+        const {navigate} = props.navigation;
+        navigate('Home_tab')
+    }
+
     const example = () => {
         const {navigate} = props.navigation;
         navigate('Example');
@@ -29,6 +34,10 @@ const ViewStudy = (props) => {
     const webViewHandle = () => {
         const {navigate} = props.navigation;
         navigate('WebViews')
+    }
+    const ListViewHandle = () => {
+        const {navigate} = props.navigation;
+        navigate('ListViews');
     }
     let navigationView = (
         <View style={styles.DLA_globalLay}>
@@ -42,6 +51,12 @@ const ViewStudy = (props) => {
                 onPress={example}
             >
                 ViewPageAdroids例子
+            </Text>
+            <Text
+                style={styles.DLA_nav}
+                onPress={home}
+            >
+                tab-home
             </Text>
         </View>
     );
@@ -87,7 +102,7 @@ const ViewStudy = (props) => {
                         <Text onPress={() => webViewHandle()} style={styles.font}>webView</Text>
                     </View>
                     <View style={[styles.center, styles.flex]}>
-                        <Text style={styles.font}>客栈, 公寓</Text>
+                        <Text onPress={()=>ListViewHandle()} style={styles.font}>ListViews</Text>
                     </View>
                 </View>
 

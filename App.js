@@ -200,6 +200,8 @@ import Touchables from './zComponent/touchable/touchables';
 import ViewPagerAndroids from './zComponent/ViewPagerAndroids/viewPagerAndroids';
 import ViewPagerAndroidExample from './zComponent/ViewPagerAndroids/example/ViewPagerAndroidExample.android';
 import WebViews from './zComponent/WebViews/webViews';
+import ListViews from './zComponent/ListViews/listViews';
+import Tab_Navigators from './zComponent/tab-navigators/tab-navigators';
 
 const AppNavigator = createStackNavigator(
     {
@@ -210,6 +212,8 @@ const AppNavigator = createStackNavigator(
         ViewPageerAdroids:{screen:ViewPagerAndroids},
         Example:{screen:ViewPagerAndroidExample},
         WebViews:{screen:WebViews},
+        ListViews:{screen:ListViews},
+        Home_tab:{screen:Tab_Navigators}
     },
     {
         initialRouteName: 'Home',
