@@ -3013,6 +3013,11 @@ image-size@^0.6.0:
   resolved "https://registry.npm.taobao.org/image-size/download/image-size-0.6.3.tgz#e7e5c65bb534bd7cdcedd6cb5166272a85f75fb2"
   integrity sha1-5+XGW7U0vXzc7dbLUWYnKoX3X7I=
 
+immutable@^3.8.1:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
+  integrity sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+
 import-fresh@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/import-fresh/download/import-fresh-2.0.0.tgz?cache=0&sync_timestamp=1561888919431&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fimport-fresh%2Fdownload%2Fimport-fresh-2.0.0.tgz#d81355c15612d386c61f9ddd3922d4304822a546"
@@ -5006,9 +5011,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npm.taobao.org/path-parse/download/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha1-1i27VnlAXXLEc37FhgDp3c8G0kw=
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@^1.7.0:
   version "1.7.0"
@@ -5261,6 +5266,14 @@ react-native-safe-area-view@^0.14.1:
   integrity sha1-JdfqTRG9pPzeLR2nrlAnHGqmNuA=
   dependencies:
     debounce "^1.2.0"
+
+react-native-tab-navigator@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/react-native-tab-navigator/-/react-native-tab-navigator-0.3.4.tgz#54a18f1ad06a09d4a0de81ff00416bc1b760c960"
+  integrity sha1-VKGPGtBqCdSg3oH/AEFrwbdgyWA=
+  dependencies:
+    immutable "^3.8.1"
+    prop-types "^15.5.10"
 
 react-native-tab-view@^1.2.0, react-native-tab-view@^1.4.1:
   version "1.4.1"
